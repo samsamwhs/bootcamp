@@ -39,10 +39,10 @@ public class DemoInt {
     double applePrice = 5.5;
     int orangeCount = 4;
     double orangePrice = 6.5;
-
     double discount = 0.95;
 
+    //! int * double = double
     double finalAmount = (applePrice * appleCount + orangePrice * orangeCount)* discount;
-    System.out.println(finalAmount);
+    System.out.println(finalAmount); //71.725
   }
 }
