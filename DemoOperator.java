@@ -26,6 +26,7 @@ public class DemoOperator {
     int a2 = j++ +3; // j + 3 -> assign -> + 1
     System.out.println(a2);//9
     System.out.println(j);//7
+    System.out.println(a2);//9 ()
 
     //int a2 = j + 3;
     //System.out.println(a2);
