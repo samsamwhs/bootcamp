@@ -2,15 +2,15 @@ public class DemoPrimitiveAdvanced {
   public static void main(String[] args) {
     //! Overflow Problem; be careful of the data type!!
     short s1 = 30000;
-    short s2 = 31000;
+    short s2 = 31000;//total: 61000
     //short s3 = s1 + s2; 
-    // error: short + short = int, byte + byte = int, byte + short = int
-    // cannot convert from int to short
+    //error: short + short = int, byte + byte = int, byte + short = int
+    //cannot convert from int to short
     short s3 = (short) (s1 + s2); //force Java to return short
     System.out.println(s3);//-4536; 32,767 -> +1 -> -32,768...-32,767...-4526
     
 
-    int i1 = 2_100_000_000;
+    int i1 = 2_100_000_000; //for easy reading, =2100000000 =2,100,000,000 
     int i2 = 100_000_000;
     int i3 = i1 + i2;
     System.out.println(i3);//-2094967296; max. int 2,147,483,647
