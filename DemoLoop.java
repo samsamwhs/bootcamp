@@ -71,21 +71,22 @@ public class DemoLoop {
   //0-20, sum up all even number; 21-50, sum up all odd numbers, 
   //find the product of both sum up amount.
 
-  int evenLessThan20 = 0;
-  int oddLargerThan20 = 0;
+  evenSum = 0;
+  oddSum = 0;
   for (int i7 = 0; i7 < 51; i7 ++){
-    if(i7 <= 20){       //number hv bussiness meaning here, easy reading of requirement
-       if(i7 % 2 == 0){      //this is second condition, if combined with 1st condition, 
-      evenLessThan20 += i7;
-    }else if(i7 >=21 && i7 <=50){
-      if(i7 % 2 == 1)
-      oddLargerThan20 += i7;
+    if(i7 <= 20){            //number hv bussiness meaning here, for easy reading and align with requirement
+       if(i7 % 2 == 0){      //this is second condition, if put it in 1st condition with &&, more will go to else-if part to filter
+        evenSum += i7;
+     }
+    } else if(i7 >=21 && i7 <=50){
+      if(i7 % 2 == 1){
+        oddSum += i7;
+      }
     }
-    }
-  System.out.println(evenLessThan20*oddLargerThan20);
+  }
+  System.out.println(evenSum * oddSum);
 
-
-}
+    
 }}
 
 
