@@ -26,8 +26,6 @@ public static void main(String[] args) {
     //Example: max, min, requires to print "max=12, min=10"
     int num1 = 10;
     int num2 = 12;
-
-    System.out.println("max="+Math.max(num1,num2)+",min="+Math.min(num1,num2));
     
     int max = num1;
     int min = num2;
