@@ -7,19 +7,6 @@ public class DemoMath {
     System.out.println(Math.floor(3.9));//3.0
     System.out.println(Math.PI);//3.141592653589793
     
-    //In Java, we don't have byte and short value
-    //assign int value into short variable
-    short s1 = 1; //safe
-    int x = 1;
-    //short s2 = x;//risky, cannot convert from int to short
-
-    long l1 =100L;
-    long l2 = 100;//promote from int to long, it's safe
-
-    //float f2 = 1.5;//risky, assign double value to float variable
-    float f1 = 1.5f;
-    double d1 = 1.5d;//promote from int to long, it's safe
-
     //!absolute value
     System.out.println(Math.abs(-3));//3
     System.out.println(Math.abs(4));//4
