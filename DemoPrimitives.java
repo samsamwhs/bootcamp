@@ -21,7 +21,7 @@ public class DemoPrimitives {
 
 
     //! Decimal: double, float
-    // Pricision: double > float 
+    // Precision: double > float 
 
     //! computer store number first and then the position of fullstop
     //! bit = on/off = 1 switch (2^1), 3 bit = 2^3, save 1 bit for "-"

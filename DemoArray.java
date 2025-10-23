@@ -1,8 +1,10 @@
+import java.util.Arrays;
+
 public class DemoArray {
   public static void main(String[] args) {
     // The way to store value: 8 primitives, 8 wrapper class, 1 String (17 types)
     // New way to store a set of same type of values
-    // new int[4] -> array object
+    // new int[4] -> array object numbers
     int[] arr = new int[4];
     // assign values into an array
     arr[0] = 100;
@@ -11,12 +13,12 @@ public class DemoArray {
     arr[3] = -200;
 
     // ! ArrayIndexOutOfBound (error: not inside our array object)
-    // arr[-1] = -200;
-    // arr[4] = -200;
+    // arr[-1] = xxx;
+    // arr[4] = xxx;
 
     // for loop to read array
-    for (int i = 0; i < 4; i++) { // 0,1,2,3
-      System.out.println(arr[i]);
+    for (int i = 0; i < 4; i++) {
+      System.out.println(arr[i]);// 0,1,2,3
     }
 
     // long array, with length 3
@@ -65,29 +67,91 @@ public class DemoArray {
     for (int i = 0; i < 5; i++) {
       a = Math.max(a, arr4[i]);
     }
-    System.out.println(a);// 100
+    System.out.println(a);// 100, cannot assign max variable
 
     int max = arr4[0];
     int min = arr4[0];
     int idxMaxValue = 0;
-    for (int i = 0; i < arr4.length; i++){
+    for (int i = 0; i < arr4.length; i++) {
       if (arr4[i] > max) {
         max = arr4[i];
         idxMaxValue = i;
-      }else{
-        if (arr4[i] < min){
+      } else {
+        if (arr4[i] < min) {
           min = arr4[i];
         }
       }
     }
-    System.out.println(max);//100
-    
-    //find the min value in arr4
-    System.out.println(min);//-20
-    
-    //find the index of the max
-    System.out.println(idxMaxValue);//3
-    
+    System.out.println(max);// 100
 
+    // find the min value in arr4
+    System.out.println(min);// -20
+
+    // find the index of the max
+    System.out.println(idxMaxValue);// 3
+
+    // String[]
+    String[] names = new String[3];
+    names[0] = "John";
+    names[1] = "Jennie";
+    names[2] = "Steve";
+
+    for (int i = 0; i < names.length; i++) {
+      System.out.println(names[i]);// John, Jennie, Steve
+    }
+
+    // loop: Find name startsWith J, print their name
+    // names -> array
+    // names -> String
+    for (int i = 0; i < names.length; i++) {
+      if (names[i].startsWith("J")) { // ==true: names[i].startsWith("J"),==false: !names[i].startsWith("J")
+        System.out.println(names[i]); // John, Jennie
+      }
+    }
+    // loop: Find the names with substring "nn"
+    for (int i = 0; i < names.length; i++) {
+      if (names[i].contains("nn")) {
+        System.out.println(names[i]); // Jennie
+      }
+    }
+    for (int i = 0; i < names.length; i++) {
+      if (names[i].indexOf("nn") != -1) {
+        System.out.println(names[i]);
+      }
+    }
+    // charAt
+    // loop: Find the index of 'e' for each name, put them in an array
+    int eCount = 0;
+    for (int i = 0; i < names.length; i++) {
+      for (int j = 0; j < names[i].length(); j++) {
+        if (names[i].charAt(j) == 'e') {
+          eCount++;
+        }
+      }
+    }
+    int[] arr10 = new int[eCount];
+    int idx = 0;
+    for (int i = 0; i < names.length; i++) {
+      for (int j = 0; j < names[i].length(); j++) {
+        if (names[i].charAt(j) == 'e') {
+          arr10[idx] = j;
+          idx++;
+        }
+      }
+    }
+    // ! Print an Array -> Arrays.toString()
+    System.out.println(Arrays.toString(arr10));// [1,5,2,4]
+
+    // search + count
+    String n1 = "Mandy";
+    //count the number of 'd'
+    int dCount = 0;
+    for (int i = 0; i < n1.length(); i++){
+      if (n1.charAt(i)=='d'){
+        dCount++;
+      }
+    }
+    System.out.println(dCount);//1
   }
 }
+
