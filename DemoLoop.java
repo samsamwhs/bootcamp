@@ -28,12 +28,12 @@ public class DemoLoop {
     // Step 11: i < 3 ? No
     // Step 12: Exit Loop
 
-    // loop -> 0,1,2,3,4,5 -> total=15
+    // sum up all values 
     int total = 0;
     for (int i2 = 0; i2 < 6; i2++) {
       total = total + i2;
       { // total += 1
-        System.out.println("total=" + total);
+        System.out.println("total=" + total); // 0+1+2+3+4+5 -> total=15
       }
     }
     // for loop + if (1-10, print odd number only)
@@ -80,7 +80,8 @@ public class DemoLoop {
     for (int i7 = 0; i7 < 51; i7++) {
       if (i7 <= 20) { // number hv bussiness meaning here, for easy reading and align with requirement
         if (i7 % 2 == 0) {
-          // this is second condition, if put it in 1st condition with &&, more number will go to else-if part to filter
+          // this is second condition, 
+          //if put it in 1st condition with &&, more number will go to else-if part to filter
           evenSum += i7;
         }
       } else if (i7 >= 21 && i7 <= 50) {

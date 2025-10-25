@@ -59,17 +59,25 @@ public class DemoPrimitiveAdvanced {
 
     // Math.random
     // new Random() is tool
-    int r1 = new Random().nextInt(3);
+    int r1 = new Random().nextInt(3); //0-2
     System.out.println("r1=" + r1);
 
-    // marksix (1-49)
+    // marksix (1-49) -> 0-48
     int r2 = new Random().nextInt(48);
     System.out.println(r2 +1);
+
+    //Answer
+    int marksix = new Random().nextInt(49)+1;
+    System.out.println(marksix);// a number within 1-49
 
     //'a'-'z' 97-122
     int r3 = new Random().nextInt(25);
     r3 = r3 + 97;
     char character = (char) r3 ;
     System.out.println(character);
+
+    //Answer
+    int targetAscii = new Random().nextInt(26) + 97;
+    System.out.println((char) targetAscii);// random 'a'-'z'
 
 }}
