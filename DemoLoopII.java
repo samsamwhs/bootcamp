@@ -23,7 +23,7 @@ public class DemoLoopII {
 
     //for-each loop
     for (double x : amounts){//loop every value in array "amounts"; x is a copy of each value in the array
-      System.out.println(x); //do reading
+      System.out.println(x); //do reading;
     } 
     //compare to basic loop
     for (int i = 0; i < amounts.length; i++){

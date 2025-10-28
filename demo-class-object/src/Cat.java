@@ -7,13 +7,28 @@ public class Cat {
   private String name; 
   private int age;
 
-  //!Constructor
+  //!Empty Constructor/ No args (means no parameters)
   //Cat() need to be same as Class name
   public Cat(){
     System.out.println("Creating a cat...");
   //default attribute which will be applied to every cat(can be overided)
     this.name = "John"; //"this" = the subject "cat"
     this.age = 10;
+  }
+
+  //!All Args Constructor
+  public Cat(String name, int age){
+    this.name = name;
+    this.age = age;
+  }
+
+  //!Object Method (Instance Method)
+  public String getName(){
+    return this.name;
+  }
+   
+  public int getAge(){
+    return this.age;
   }
 
   //main is execution code block
@@ -47,6 +62,12 @@ public class Cat {
     int[] ages = new int[]{10,12};//=excel's column
 
     //! excel's row -> object which has name and age
+
+    Cat c3 = new Cat("Mary", 8);
+    Cat c4 = new Cat();
+    System.out.println(c3.getAge());//8
+    System.out.println(c4.getAge());//10 
+
   }
 }
 
