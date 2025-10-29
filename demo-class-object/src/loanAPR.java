@@ -1,52 +1,84 @@
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class loanAPR {
+public class LoanAPR {
 
   //!Attribute
   private double loanAmount;
   private double fee;
+  private double interestRate;
   private int numberOfDays;
-  private double InterestRate;
+  
 
   //!Empty Constructor
-  public loanAPR(){
+  public LoanAPR(){
 
-  }
+  }                         
   
   //!All args Constructor
-  public loanAPR(double loanAmount, double fee, double InterestRate, int numberOfDays){
-
+  public LoanAPR(double loanAmount, double fee, double interestRate, int numberOfDays){
+    this.loanAmount = loanAmount;
+    this.fee = fee;
+    this.interestRate = interestRate/100;
+    this.numberOfDays = numberOfDays;
   }
 
+  //!getter and setter
+  //setter
+  public void setLoanAmount(double loanAmount){
+    this.loanAmount = loanAmount;
+  }
+  public void setFee(double fee){
+    this.fee = fee;
+  }
+  public void setInterestRate(double interestRate){
+    this.interestRate = interestRate;
+  }
+  public void setNumberOfDays(int numberOfDays){
+    this.numberOfDays = numberOfDays;
+  }
+
+  //getter
+  public double getLoanAmount(){
+    return this.loanAmount;
+  }
+  public double getFee(){
+    return this.fee;
+  }
+  public double getInterestRate(){
+    return this.interestRate;
+  }
+  public int getNumberOfDays(){
+    return this.numberOfDays;
+  }
+  public double getNumberOfYear(){
+     return BigDecimal.valueOf(this.numberOfDays).divide(BigDecimal.valueOf(365),2,RoundingMode.HALF_UP).doubleValue();
+  }
+  public double getTotalInterest(){
+    return BigDecimal.valueOf(this.loanAmount).multiply(BigDecimal.valueOf(this.interestRate))//
+    .multiply(BigDecimal.valueOf(getNumberOfYear())).setScale(2, RoundingMode.HALF_UP).doubleValue();
+  }
+  public double getApr(){
+    BigDecimal feeAndInterest = BigDecimal.valueOf(this.fee).add(BigDecimal.valueOf(getTotalInterest()));
+    BigDecimal dividedByLoanAmount = feeAndInterest.divide(BigDecimal.valueOf(this.loanAmount),4,RoundingMode.HALF_UP);
+    BigDecimal dividedByNumberOfDays = dividedByLoanAmount//
+    .divide(BigDecimal.valueOf(this.numberOfDays),8,RoundingMode.HALF_UP);
+    return dividedByNumberOfDays//
+    .multiply(BigDecimal.valueOf(365)).setScale(4,RoundingMode.HALF_UP)//
+    .multiply(BigDecimal.valueOf(100)).setScale(4,RoundingMode.HALF_UP)//
+    .doubleValue();
+  }
+ 
   //!main
   public static void main(String[] args) {
-    loanAPR l1 = new loanAPR();
-    l1.loanAmount = 8000;
-    l1.monthlyInterestRate = 0.004167;
-    l1.numberOfDays = 730;
-    l1.fee = 75.0;
-    l1.totalInterest = calTotalInterest(l1.loanAmount, l1.monthlyInterestRate, l1.numberOfDays);
-    System.out.println(calAPR(l1.fee,l1.totalInterest,l1.loanAmount,l1.numberOfDays));
+    LoanAPR l1 = new LoanAPR(8000.0,75.0,5,730);
+    System.out.println(l1.getApr()+"%");
   
   }
 
 
 
-  public static double calTotalInterest(double loanAmount, double monthlyInterestRate, double numberOfDays){
-    BigDecimal numberOfYear = BigDecimal.valueOf(numberOfDays).divide(BigDecimal.valueOf(365,2,RoundingMode.HALF_UP);
-    double totalInterest = new BigDecimal(loanAmount * monthlyInterestRate * 12 * numberOfYear).setScale(0, RoundingMode.HALF_UP).doubleValue();
-    return totalInterest;
-  }
 
-  public static double calApr (double fee, double totalInterest, double loanAmount, int numberOfDays){
-    BigDecimal feeAndInterest = BigDecimal.valueOf(fee).add(BigDecimal.valueOf(totalInterest));
-    BigDecimal dividedByLoanAmount = feeAndInterest.divide(BigDecimal.valueOf(loanAmount),2,RoundingMode.HALF_UP);
-    BigDecimal dividedByNumberOfDays = dividedByLoanAmount.divide(BigDecimal.valueOf(numberOfDays),2,RoundingMode.HALF_UP);
-    return dividedByNumberOfDays//
-    .multiply(BigDecimal.valueOf(365)).setScale(2,RoundingMode.HALF_UP)//
-    .multiply(BigDecimal.valueOf(100)).setScale(2,RoundingMode.HALF_UP)//
-    .doubleValue();
-  }
+  
 }
 
