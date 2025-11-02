@@ -57,7 +57,7 @@ public class DemoPrimitives {
     int age = 19;
     boolean isAdult = age >= 18;//true
     
-    boolean b10 = true;
+    boolean b10 = true;//true
 
 
   }

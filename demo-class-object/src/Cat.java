@@ -43,8 +43,6 @@ public class Cat {
     System.out.println("c1="+c1.name);//John
     System.out.println("c1="+c1.age);//10
 
-    new Cat();//No longer able to find the cat object, after creating it.
-
     Cat c2 = new Cat();
     System.out.println("c2="+c2.name);//John
     System.out.println("c2="+c2.age);//10
@@ -57,16 +55,22 @@ public class Cat {
     System.out.println(cats[1].name);//Jennie
     System.out.println(cats[1].age);//12
 
+    Cat c3 = new Cat("Mary", 8);
+    Cat c4 = new Cat();
+    System.out.println(c3.getAge());//8
+    System.out.println(c4.getAge());//10 
+
+    //No longer able to find the cat object, 
+    //after creating it since no object reference
+    new Cat();
+
     //!Without Class
     String[] names = new String[] {"John", "Jennie"};//= excel's column
     int[] ages = new int[]{10,12};//=excel's column
 
     //! excel's row -> object which has name and age
 
-    Cat c3 = new Cat("Mary", 8);
-    Cat c4 = new Cat();
-    System.out.println(c3.getAge());//8
-    System.out.println(c4.getAge());//10 
+
 
   }
 }

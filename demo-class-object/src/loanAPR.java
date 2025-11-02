@@ -8,18 +8,17 @@ public class LoanAPR {
   private double fee;
   private double interestRate;
   private int numberOfDays;
-  
 
   //!Empty Constructor
   public LoanAPR(){
 
-  }                         
-  
+  }
+
   //!All args Constructor
   public LoanAPR(double loanAmount, double fee, double interestRate, int numberOfDays){
     this.loanAmount = loanAmount;
     this.fee = fee;
-    this.interestRate = interestRate/100;
+    this.interestRate = interestRate*12/100;
     this.numberOfDays = numberOfDays;
   }
 
@@ -68,17 +67,19 @@ public class LoanAPR {
     .multiply(BigDecimal.valueOf(100)).setScale(4,RoundingMode.HALF_UP)//
     .doubleValue();
   }
- 
+  public double getMfr(){
+    return BigDecimal.valueOf(this.interestRate).divide(BigDecimal.valueOf(12),4,RoundingMode.HALF_UP).multiply(BigDecimal.valueOf(100)).setScale(4,RoundingMode.HALF_UP).doubleValue();
+  }
+
+
   //!main
   public static void main(String[] args) {
     LoanAPR l1 = new LoanAPR(8000.0,75.0,5,730);
     System.out.println(l1.getApr()+"%");
-  
+    System.out.println(l1.getMfr()+"%");
+    LoanAPR l2 = new LoanAPR(50000.0,0.0,0.3,365);
+    System.out.println(l2.getApr()+"%");
+    System.out.println(l2.getMfr()+"%");
   }
-
-
-
-
-  
 }
 

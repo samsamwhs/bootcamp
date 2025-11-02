@@ -152,6 +152,14 @@ public class DemoArray {
       }
     }
     System.out.println(dCount);//1
+
+    //reference data type : OOP
+    int[] test = {10,20,30,40};
+    int[] test1 = test;
+    System.out.println(Arrays.toString(test));
+    test[1]=50;
+    System.out.println(Arrays.toString(test1));
+    System.out.println(Arrays.toString(test));
   }
 }
 

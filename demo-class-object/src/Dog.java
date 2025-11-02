@@ -20,6 +20,18 @@ public class Dog {
     this.height = height;
   }
 
+  //!different arg constructor, problem: difficult to recognise the object
+  //! duplicated: the no. and type of parameter are same, so Java can't recognise
+
+  
+  public Dog(double weight){
+    this.weight = weight;
+  }
+
+  //   public Dog(double height){
+  //   this.height = height;
+  // }
+
   //!getter for weight and height
   public double getWeight(){
     return this.weight;
@@ -44,7 +56,7 @@ public class Dog {
   }
   public void setHeight (double height){
     this.height = height;
-  }
+  } 
 
   //main -> testing
   public static void main(String[] args) {
