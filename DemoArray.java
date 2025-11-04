@@ -63,32 +63,33 @@ public class DemoArray {
     arr4[3] = 100;
     arr4[4] = -20;
 
-    int a = 0;
-    for (int i = 0; i < 5; i++) {
-      a = Math.max(a, arr4[i]);
-    }
-    System.out.println(a);// 100, cannot assign max variable
-
-    int max = arr4[0];
-    int min = arr4[0];
+    int max = 0;
     int idxMaxValue = 0;
+    for (int i = 0; i < 5; i++) {
+      max = Math.max(max, arr4[i]);
+      idxMaxValue = arr4[i];
+    }
+    System.out.println("max="+max);// 100
+    System.out.println("idxMaxValue="+ idxMaxValue);
+
+    int max1 = arr4[0];
+    int min1 = arr4[0];
+    int idxMaxValue1 = 0;
     for (int i = 0; i < arr4.length; i++) {
-      if (arr4[i] > max) {
-        max = arr4[i];
-        idxMaxValue = i;
+      if (arr4[i] > max1) {
+        max1 = arr4[i];
+        idxMaxValue1 = i;
       } else {
-        if (arr4[i] < min) {
-          min = arr4[i];
+        if (arr4[i] < min1) {
+          min1 = arr4[i];
         }
       }
     }
-    System.out.println(max);// 100
-
+    System.out.println("max1="+max1);// 100
     // find the min value in arr4
-    System.out.println(min);// -20
-
+    System.out.println("min1="+min1);// -20
     // find the index of the max
-    System.out.println(idxMaxValue);// 3
+    System.out.println("idxMaxValue1="+idxMaxValue1);// 3
 
     // String[]
     String[] names = new String[3];

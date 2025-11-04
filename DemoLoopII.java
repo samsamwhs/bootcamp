@@ -39,9 +39,6 @@ public class DemoLoopII {
       total = BigDecimal.valueOf(total).add(BigDecimal.valueOf(amount)).doubleValue();
       //"amounts" is an array with double value, so Bigdecimal should be used
     }
-    System.out.println("total=" + total);//total=1146.52s
-
-
-
+    System.out.println("total=" + total);//total=1146.52
   }
 }

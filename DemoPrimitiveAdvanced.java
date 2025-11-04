@@ -9,7 +9,7 @@ public class DemoPrimitiveAdvanced {
     //error: short + short = int, byte + byte = int, byte + short = int
     //cannot convert from int to short
     short s3 = (short) (s1 + s2); //force Java to return short
-    System.out.println(s3);//-4536; 32,767 -> +1 -> -32,768...-32,767...-4526
+    System.out.println("s3="+s3);//-4536; 32,767 -> +1 -> -32,768...-32,767...-4536
     
     int i1 = 2_100_000_000; //for easy reading, =2100000000 =2,100,000,000 
     int i2 = 100_000_000;
@@ -26,7 +26,7 @@ public class DemoPrimitiveAdvanced {
     double d10 = f10;
 
     //! Downcasting
-   // float f11 = 10.5; //error: 10.5 is double, it's risky
+    //float f11 = 10.5; //error: 10.5 is double, it's risky
    float f11 = (float) 10.5;
    long l12 = 2_200_000_000L;
    int i11 = (int)l12;//force Java to return int, user confirmed to accept the risk

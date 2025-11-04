@@ -151,7 +151,7 @@ public class DemoString {
     String boy1 = "boy";
     System.out.println(boy.compareTo(boy1));//0
     String book = "book";
-    System.out.println(boy.compareTo(book));10 (o - y)
+    System.out.println(boy.compareTo(book));//10 (o - y)
 
     
 
