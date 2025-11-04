@@ -52,15 +52,20 @@ public class Customer {
     o1.addItem(new Item("DEF", 9.9, 10));
     o1.addItem(new Item("IJK", 999.9, 2));
 
-    System.out.println(o1.totalAmount());
+    System.out.println(o1.totalAmount());//2106.3
 
     // Given Item name, find the subtotal
     // "DEF" -> 99 (9.9 x 10)
     System.out.println(o1.getSubTotal("DEF"));// 99.0
 
     Customer c1 = new Customer();
+    // o1.addItem(new Item("XYZ", 9000, 1));
+    
     c1.addOrder(o1);
-    o1.
+    
+    o1.addItem(new Item("XYZ", 9000, 1));
+
+    System.out.println(c1.isVip()); // true
 
   }
 

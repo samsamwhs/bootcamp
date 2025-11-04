@@ -38,16 +38,14 @@ public class String1 {
   public String substring(int startIdx, int endIdx){
     int idx = 0;
     char[] arrtoString = new char[endIdx-startIdx];
-    for (char x : this.values){
-      if(startIdx = x && x < endIdx){
-        arrtoString[idx] = this.values[x];
+    for (int i = 0; i < this.values.length; i++){
+      if(i >= startIdx && i<endIdx){
+        arrtoString[idx] = this.values[i];
         idx++;
       }
     }
     return String.valueOf(arrtoString);
   }
-
-
 
 
   // equals(String1 s)
