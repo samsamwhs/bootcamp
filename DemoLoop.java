@@ -108,12 +108,12 @@ public class DemoLoop {
 
 
 
-    //Scanner
-    //Scanner s = new Scanner(System.in);//let user to input
-    //System.out.println("Please input an integer:");
-    //int input = s.nextInt();
-    //int result = input * 3;
-    //System.out.println("result=" + result);
+    // //Scanner
+    // Scanner s = new Scanner(System.in);//let user to input
+    // System.out.println("Please input an integer:");
+    // int input = s.nextInt();
+    // int result = input * 3;
+    // System.out.println("result=" + result);
 
 
   }

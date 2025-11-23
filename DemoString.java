@@ -53,7 +53,7 @@ public class DemoString {
     String s5 = "";
     System.out.println(s5.length());//0
 
-    String s10 = null; //not String
+    String s10 = null; //not String 
     //System.out.println(s10.length());//error
 
     //5. isBlank()
@@ -153,10 +153,13 @@ public class DemoString {
     String book = "book";
     System.out.println(boy.compareTo(book));//10 (o - y)
 
-    
+
+  
+
+
+  }}
 
 
 
 
-  }
-}
+  

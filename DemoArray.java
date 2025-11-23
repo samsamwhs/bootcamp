@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class DemoArray {
   public static void main(String[] args) {
@@ -30,7 +31,7 @@ public class DemoArray {
 
     for (int i = 0; i < 3; i++) { // 0,1,2
       if (arr1[i] % 2 == 0) {
-        System.out.println(arr1[i]);
+        System.out.println(arr1[i]);//40
       }
     }
 
@@ -67,10 +68,12 @@ public class DemoArray {
     int idxMaxValue = 0;
     for (int i = 0; i < 5; i++) {
       max = Math.max(max, arr4[i]);
-      idxMaxValue = arr4[i];
+      if (arr4[i]== max){
+        idxMaxValue = i;
+      }
     }
     System.out.println("max="+max);// 100
-    System.out.println("idxMaxValue="+ idxMaxValue);
+    System.out.println("idxMaxValue="+ idxMaxValue);//3
 
     int max1 = arr4[0];
     int min1 = arr4[0];
@@ -161,6 +164,7 @@ public class DemoArray {
     test[1]=50;
     System.out.println(Arrays.toString(test1));
     System.out.println(Arrays.toString(test));
-  }
-}
+  }}
+
+
 

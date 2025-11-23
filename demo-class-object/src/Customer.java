@@ -10,7 +10,7 @@ public class Customer {
   // !Attribute
   private Order[] orders;// create array
 
-  // !Constructor : set rules to create new object, both  
+  // !Constructor : set rules to create new object, both empty and all args 
   public Customer() {
     this.orders = new Order[0];
   }
@@ -68,7 +68,4 @@ public class Customer {
     System.out.println(c1.isVip()); // true
 
   }
-
-
-
 }
