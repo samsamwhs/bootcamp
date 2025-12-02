@@ -48,12 +48,12 @@ public class Dog {
   //remove by index, dog -> dog -> dog
   public void removeByIdx(int idx){
     Dog currentDog = this;
-    idx = 0;
+    int count = 0;
     while(currentDog != null){
-      count++; //can do anything here
-      currentDog = currentDog.getNextDog();
+      count++;
+      if (count -1 == idx)
+      currentDog = null;
     }
-    return count;
   }
   
 
